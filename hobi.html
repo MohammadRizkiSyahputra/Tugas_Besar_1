@@ -14,6 +14,24 @@
     <h1>Informasi Hobi</h1>
   </header>
 
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">Hobi</a>
+      <ul class="nav-menu">
+        <li class="nav-item"><a href="index.html" >Home</a></li>
+        <li class="nav-item"><a href="profile.html">Profil</a></li>
+        <li class="nav-item"><a href="informasikeluarga.html">Keluarga</a></li>
+        <li class="nav-item"><a href="teman.html" >Teman</a></li>
+        <li class="nav-item"><a href="hobi.html" class="active">Hobi</a></li>
+      </ul>
+      <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+    </div>
+  </nav>
+
   <!-- Konten Utama -->
   <main class="content-container">
     <div class="profile-container">
@@ -30,9 +48,21 @@
 
   <!-- Navigasi Halaman -->
   <nav class="pagination">
-    <a href="teman.html">⬅ Kembali</a>
-    <a href="lebaran.html">Selanjutnya ➡</a>
+    <a href="index.html" class="start-button">Kembali ke Awal</a>
   </nav>
+  <script>
+    const hamburger = document.querySelector(".hamburger");
+    const navMenu = document.querySelector(".nav-menu");
 
+    hamburger.addEventListener("click", () => {
+      hamburger.classList.toggle("active");
+      navMenu.classList.toggle("active");
+    });
+
+    document.querySelectorAll(".nav-item a").forEach(n => n.addEventListener("click", () => {
+      hamburger.classList.remove("active");
+      navMenu.classList.remove("active");
+    }));
+  </script>
 </body>
 </html>

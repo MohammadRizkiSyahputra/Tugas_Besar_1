@@ -8,10 +8,67 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+
+   <!-- Navbar -->
+   <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">Home</a>
+      <ul class="nav-menu">
+        <li class="nav-item"><a href="index.html" class="active">Home</a></li>
+        <li class="nav-item"><a href="profile.html">Profil</a></li>
+        <li class="nav-item"><a href="informasikeluarga.html">Keluarga</a></li>
+        <li class="nav-item"><a href="teman.html">Teman</a></li>
+        <li class="nav-item"><a href="hobi.html">Hobi</a></li>
+      </ul>
+      <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+    </div>
+  </nav>
+  
   <div class="landing-container">
     <h1>Tugas Besar 1</h1>
     <p>Website ini berisi informasi tentang saya, mulai dari profil, keluarga, teman, hingga hobi saya.</p>
     <a href="profile.html" class="start-button">Gas doxxing diri sendiri</a>
   </div>
+
+  <section class="contact-section">
+    <h2>Contact Me</h2>
+    <form class="contact-form" action="#" method="post">
+      <label for="nama">Nama:</label>
+      <input type="text" id="nama" name="nama" required>
+  
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+  
+      <label for="pesan">Pesan:</label>
+      <textarea id="pesan" name="pesan" rows="4" required></textarea>
+  
+      <button type="submit">Kirim</button>
+    </form>
+  </section>
+  
+  <footer class="main-footer">
+    <p>Connect with me:</p>
+    <a href="https://www.instagram.com/rizsd21/" target="_blank">Instagram</a> |
+    <a href="https://github.com/MohammadRizkiSyahputra" target="_blank">GitHub</a>
+  </footer>
+
+  <script>
+    const hamburger = document.querySelector(".hamburger");
+    const navMenu = document.querySelector(".nav-menu");
+
+    hamburger.addEventListener("click", () => {
+      hamburger.classList.toggle("active");
+      navMenu.classList.toggle("active");
+    });
+
+    document.querySelectorAll(".nav-item a").forEach(n => n.addEventListener("click", () => {
+      hamburger.classList.remove("active");
+      navMenu.classList.remove("active");
+    }));
+  </script>
 </body>
 </html>
